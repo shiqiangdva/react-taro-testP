@@ -1,0 +1,15 @@
+{
+	"projectname": "dist",
+	"description": "taro联系项目",
+	"appid": "wx193a4cd7d30a1167",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false
+	},
+	"compileType": "plugin",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {}
+}
