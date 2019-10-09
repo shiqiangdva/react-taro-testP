@@ -1,5 +1,5 @@
 {
-	"projectname": "dist",
+	"projectname": "taroTestP",
 	"description": "taro联系项目",
 	"appid": "wx193a4cd7d30a1167",
 	"setting": {
@@ -8,7 +8,7 @@
 		"postcss": false,
 		"minified": false
 	},
-	"compileType": "plugin",
+	"compileType": "miniprogram",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {}

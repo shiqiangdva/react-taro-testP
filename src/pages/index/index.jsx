@@ -21,17 +21,31 @@ export default class Index extends Component {
     console.log('页面第一次渲染后执行, 只执行一次');
     // this.state.name = '这是错误的写法'
     // this.setState.name = '这样行不? 也不行!'
-    this.setState({name: '这样写肯定行!'});
+    this.setState({name: '这样写肯定行!'}, () => {
+      // 状态变更一定是异步的,所以想要立刻取得最新值就需要回调来拿
+      console.log(this.state.name+'回调.');
+    });
+    console.log(this.state.name+'非回调');
    }
 
   componentWillUnmount () {
     console.log('卸载时执行, 只执行一次');
    }
 
-   shouldComponentUpdate() {
+   shouldComponentUpdate(nextProps, nextState) {
     // 检查此次setState是否要进行render调用
+    // 一般用来多次setState调用时,提升render的性能
     // 返回false不进行render调用更新页面
-    return false;
+    // 参数nextProps父组件传递的数据, 参数nextState为下次更新的state数据
+    if(nextState.name === '这样写肯定行!') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    // 会在父组件传递给子组件的参数发生改变时触发
   }
 
    componentWillUpdate() {
