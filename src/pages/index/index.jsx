@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.less'
+import Child from './child';
 
 export default class Index extends Component {
 
@@ -10,7 +11,8 @@ export default class Index extends Component {
   }
 
   state = {
-    name: 'xxx'
+    name: 'xxx',
+    obj: undefined
   }
 
   componentWillMount () {
@@ -21,7 +23,7 @@ export default class Index extends Component {
     console.log('页面第一次渲染后执行, 只执行一次');
     // this.state.name = '这是错误的写法'
     // this.setState.name = '这样行不? 也不行!'
-    this.setState({name: '这样写肯定行!'}, () => {
+    this.setState({name: '这样写肯定行!', obj: [{key: 'xxxooo~'}]}, () => {
       // 状态变更一定是异步的,所以想要立刻取得最新值就需要回调来拿
       console.log(this.state.name+'回调.');
     });
@@ -45,7 +47,7 @@ export default class Index extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // 会在父组件传递给子组件的参数发生改变时触发
+    // 会在父组件传递给子组件的参数(props)发生改变时触发
   }
 
    componentWillUpdate() {
@@ -72,10 +74,15 @@ export default class Index extends Component {
     return 'xxx';
   }
 
+  methodPropsTest() {
+    console.log('我是父组件的方法,我在被执行!');
+  }
+
   render () {
     return (
       <View className='index'>
         <Text>{this.state.name}</Text>
+        <Child data={this.state.name} obj={this.state.obj} test={this.methodPropsTest}></Child>
       </View>
     )
   }
