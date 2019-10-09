@@ -36,11 +36,12 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["name"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__22", "name", "obj"], _this.config = {
       navigationBarTitleText: '首页'
     }, _this.state = {
-      name: 'xxx'
-    }, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+      name: 'xxx',
+      obj: undefined
+    }, _this.customComponents = ["Child"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
@@ -66,7 +67,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       console.log('页面第一次渲染后执行, 只执行一次');
       // this.state.name = '这是错误的写法'
       // this.setState.name = '这样行不? 也不行!'
-      this.setState({ name: '这样写肯定行!' }, function () {
+      this.setState({ name: '这样写肯定行!', obj: [{ key: 'xxxooo~' }] }, function () {
         // 状态变更一定是异步的,所以想要立刻取得最新值就需要回调来拿
         console.log(_this2.state.name + '回调.');
       });
@@ -93,7 +94,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
   }, {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      // 会在父组件传递给子组件的参数发生改变时触发
+      // 会在父组件传递给子组件的参数(props)发生改变时触发
     }
   }, {
     key: "componentWillUpdate",
@@ -123,6 +124,11 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       return 'xxx';
     }
   }, {
+    key: "methodPropsTest",
+    value: function methodPropsTest() {
+      console.log('我是父组件的方法,我在被执行!');
+    }
+  }, {
     key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
@@ -130,7 +136,15 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      Object.assign(this.__state, {});
+      var $compid__22 = (0, _index.genCompid)(__prefix + "$compid__22");
+      _index.propsManager.set({
+        "data": this.__state.name,
+        "obj": this.__state.obj,
+        "test": this.methodPropsTest
+      }, $compid__22);
+      Object.assign(this.__state, {
+        $compid__22: $compid__22
+      });
       return this.__state;
     }
   }]);
