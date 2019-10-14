@@ -1,0 +1,5 @@
+<block wx:if="{{$taroCompReady}}">
+    <view>
+        <button catchtap="handleBtn" data-e-tap-so="this" data-e-tap-a-a="xxx" data-e-tap-a-b="ooo">测试事件</button>
+    </view>
+</block>
