@@ -1,0 +1,6 @@
+<block wx:if="{{$taroCompReady}}">
+    <view>我是Dialog, propsChildren内容是:
+        <slot></slot>
+        <slot name="ts"></slot>
+    </view>
+</block>

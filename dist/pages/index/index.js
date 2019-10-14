@@ -36,11 +36,12 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["name"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__7", "name", "obj"], _this.config = {
       navigationBarTitleText: '首页'
     }, _this.state = {
-      name: 'xxx'
-    }, _this.customComponents = [], _temp), _possibleConstructorReturn(_this, _ret);
+      name: 'xxx',
+      obj: undefined
+    }, _this.customComponents = ["Child"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
@@ -50,18 +51,33 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
 
       this.$$refs = [];
     }
+
+    // eslint-disable-next-line react/sort-comp
+
   }, {
     key: "componentWillMount",
     value: function componentWillMount() {
       console.log('页面第一次渲染前执行, 只执行一次');
+      // 路由接收(test传过来的)
+      var _$router$params = this.$router.params,
+          tmp = _$router$params.tmp,
+          id = _$router$params.id;
+
+      console.log('路由传递的参数为:' + tmp + ',' + id);
     }
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
+      var _this2 = this;
+
       console.log('页面第一次渲染后执行, 只执行一次');
       // this.state.name = '这是错误的写法'
       // this.setState.name = '这样行不? 也不行!'
-      this.setState({ name: '这样写肯定行!' });
+      this.setState({ name: '这样写肯定行!', obj: [{ key: 'xxxooo~' }] }, function () {
+        // 状态变更一定是异步的,所以想要立刻取得最新值就需要回调来拿
+        console.log(_this2.state.name + '回调.');
+      });
+      console.log(this.state.name + '非回调');
     }
   }, {
     key: "componentWillUnmount",
@@ -72,8 +88,19 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(nextProps, nextState) {
       // 检查此次setState是否要进行render调用
+      // 一般用来多次setState调用时,提升render的性能
       // 返回false不进行render调用更新页面
-      return false;
+      // 参数nextProps父组件传递的数据, 参数nextState为下次更新的state数据
+      if (nextState.name === '这样写肯定行!') {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      // 会在父组件传递给子组件的参数(props)发生改变时触发
     }
   }, {
     key: "componentWillUpdate",
@@ -103,6 +130,11 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       return 'xxx';
     }
   }, {
+    key: "methodPropsTest",
+    value: function methodPropsTest() {
+      console.log('我是父组件的方法,我在被执行!');
+    }
+  }, {
     key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
@@ -110,7 +142,15 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      Object.assign(this.__state, {});
+      var $compid__7 = (0, _index.genCompid)(__prefix + "$compid__7");
+      _index.propsManager.set({
+        "data": this.__state.name,
+        "obj": this.__state.obj,
+        "test": this.methodPropsTest
+      }, $compid__7);
+      Object.assign(this.__state, {
+        $compid__7: $compid__7
+      });
       return this.__state;
     }
   }]);

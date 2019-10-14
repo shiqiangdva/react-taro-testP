@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/dialog/testdialog",
+    "pages/test/test",
     "pages/index/index"
   ],
   "window": {
@@ -7,6 +9,5 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }

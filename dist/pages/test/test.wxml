@@ -1,0 +1,7 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="index">
+        <image src="{{anonymousState__temp}}" class="image"></image>
+        <button bindtap="handleBtn">Test跳转</button>
+        <view wx:key="index" wx:for="{{list}}" wx:for-item="item" wx:for-index="index">{{item.name}}</view>
+    </view>
+</block>
