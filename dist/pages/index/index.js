@@ -50,6 +50,9 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
 
       this.$$refs = [];
     }
+
+    // eslint-disable-next-line react/sort-comp
+
   }, {
     key: "componentWillMount",
     value: function componentWillMount() {
@@ -70,7 +73,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     }
   }, {
     key: "shouldComponentUpdate",
-    value: function shouldComponentUpdate(nextProps, nextState) {
+    value: function shouldComponentUpdate() {
       // 检查此次setState是否要进行render调用
       // 返回false不进行render调用更新页面
       return false;
