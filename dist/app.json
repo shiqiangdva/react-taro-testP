@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/dialog/testdialog",
+    "pages/test/test",
     "pages/index/index"
   ],
   "window": {

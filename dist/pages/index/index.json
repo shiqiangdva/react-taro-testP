@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "child": "./child"
+  },
   "navigationBarTitleText": "首页"
 }
