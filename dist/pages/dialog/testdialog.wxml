@@ -8,7 +8,7 @@
         <dialog>3.
             <button>我是按钮~</button>
         </dialog>
-        <dialog compid="{{$compid__30}}">
+        <dialog compid="{{$compid__31}}">
             <image src="{{anonymousState__temp3}}"></image>
             <view slot="ts">
                 <image src="{{anonymousState__temp4}}"></image>

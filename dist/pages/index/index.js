@@ -36,7 +36,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__7", "name", "obj"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__33", "name", "obj"], _this.config = {
       navigationBarTitleText: '首页'
     }, _this.state = {
       name: 'xxx',
@@ -86,7 +86,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     }
   }, {
     key: "shouldComponentUpdate",
-    value: function shouldComponentUpdate() {
+    value: function shouldComponentUpdate(nextProps, nextState) {
       // 检查此次setState是否要进行render调用
       // 一般用来多次setState调用时,提升render的性能
       // 返回false不进行render调用更新页面
@@ -142,14 +142,14 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__7 = (0, _index.genCompid)(__prefix + "$compid__7");
+      var $compid__33 = (0, _index.genCompid)(__prefix + "$compid__33");
       _index.propsManager.set({
         "data": this.__state.name,
         "obj": this.__state.obj,
         "test": this.methodPropsTest
-      }, $compid__7);
+      }, $compid__33);
       Object.assign(this.__state, {
-        $compid__7: $compid__7
+        $compid__33: $compid__33
       });
       return this.__state;
     }
