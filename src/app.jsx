@@ -14,6 +14,7 @@ class App extends Component {
   config = {
     // 注意: pages里面配置页面路由, 并且文件名不能加后缀(例:test.jsx)会报错,不能带文件后缀
     pages: [
+      'pages/event/event',
       'pages/dialog/testdialog',
       'pages/test/test',
       'pages/index/index'

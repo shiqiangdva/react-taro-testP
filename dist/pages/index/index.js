@@ -36,7 +36,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__33", "name", "obj"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__35", "name", "obj"], _this.config = {
       navigationBarTitleText: '首页'
     }, _this.state = {
       name: 'xxx',
@@ -142,14 +142,14 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__33 = (0, _index.genCompid)(__prefix + "$compid__33");
+      var $compid__35 = (0, _index.genCompid)(__prefix + "$compid__35");
       _index.propsManager.set({
         "data": this.__state.name,
         "obj": this.__state.obj,
         "test": this.methodPropsTest
-      }, $compid__33);
+      }, $compid__35);
       Object.assign(this.__state, {
-        $compid__33: $compid__33
+        $compid__35: $compid__35
       });
       return this.__state;
     }

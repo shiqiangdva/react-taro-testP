@@ -36,7 +36,7 @@ var TestDialog = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TestDialog.__proto__ || Object.getPrototypeOf(TestDialog)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp3", "anonymousState__temp4", "$compid__31"], _this.customComponents = ["Dialog"], _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TestDialog.__proto__ || Object.getPrototypeOf(TestDialog)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "anonymousState__temp3", "anonymousState__temp4", "$compid__34"], _this.customComponents = ["Dialog"], _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(TestDialog, [{
@@ -54,16 +54,16 @@ var TestDialog = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__31 = (0, _index.genCompid)(__prefix + "$compid__31");
+      var $compid__34 = (0, _index.genCompid)(__prefix + "$compid__34");
       var anonymousState__temp = "/img/img-meinv.jpg";
       var anonymousState__temp4 = "/img/img-meinv.jpg";
       var anonymousState__temp3 = "/img/img-meinv.jpg";
-      _index.propsManager.set({}, $compid__31);
+      _index.propsManager.set({}, $compid__34);
       Object.assign(this.__state, {
         anonymousState__temp: anonymousState__temp,
         anonymousState__temp3: anonymousState__temp3,
         anonymousState__temp4: anonymousState__temp4,
-        $compid__31: $compid__31
+        $compid__34: $compid__34
       });
       return this.__state;
     }

@@ -1,5 +1,5 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="index"><text>{{name}}</text>
-        <child compid="{{$compid__33}}"></child>
+        <child compid="{{$compid__35}}"></child>
     </view>
 </block>
