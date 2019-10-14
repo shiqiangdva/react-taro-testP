@@ -1,0 +1,18 @@
+<block wx:if="{{$taroCompReady}}">
+    <view>
+        <dialog><text>1.我是文本啦啦啦</text>
+        </dialog>
+        <dialog>2.
+            <image src="{{anonymousState__temp}}"></image>
+        </dialog>
+        <dialog>3.
+            <button>我是按钮~</button>
+        </dialog>
+        <dialog compid="{{$compid__30}}">
+            <image src="{{anonymousState__temp3}}"></image>
+            <view slot="ts">
+                <image src="{{anonymousState__temp4}}"></image>
+            </view>
+        </dialog>
+    </view>
+</block>

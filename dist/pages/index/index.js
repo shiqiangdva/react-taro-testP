@@ -36,7 +36,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__22", "name", "obj"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["$compid__7", "name", "obj"], _this.config = {
       navigationBarTitleText: '首页'
     }, _this.state = {
       name: 'xxx',
@@ -58,6 +58,12 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
     key: "componentWillMount",
     value: function componentWillMount() {
       console.log('页面第一次渲染前执行, 只执行一次');
+      // 路由接收(test传过来的)
+      var _$router$params = this.$router.params,
+          tmp = _$router$params.tmp,
+          id = _$router$params.id;
+
+      console.log('路由传递的参数为:' + tmp + ',' + id);
     }
   }, {
     key: "componentDidMount",
@@ -136,14 +142,14 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       var __isRunloopRef = arguments[2];
       var __prefix = this.$prefix;
       ;
-      var $compid__22 = (0, _index.genCompid)(__prefix + "$compid__22");
+      var $compid__7 = (0, _index.genCompid)(__prefix + "$compid__7");
       _index.propsManager.set({
         "data": this.__state.name,
         "obj": this.__state.obj,
         "test": this.methodPropsTest
-      }, $compid__22);
+      }, $compid__7);
       Object.assign(this.__state, {
-        $compid__22: $compid__22
+        $compid__7: $compid__7
       });
       return this.__state;
     }

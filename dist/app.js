@@ -39,7 +39,8 @@ var _App = function (_BaseComponent) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = _App.__proto__ || Object.getPrototypeOf(_App)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
-      pages: ['pages/index/index'],
+      // 注意: pages里面配置页面路由, 并且文件名不能加后缀(例:test.jsx)会报错,不能带文件后缀
+      pages: ['pages/dialog/testdialog', 'pages/test/test', 'pages/index/index'],
       window: {
         backgroundTextStyle: 'light',
         navigationBarBackgroundColor: '#fff',
